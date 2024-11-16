@@ -1,0 +1,45 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <!--Home page-->
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <jsp-file>/home.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <!--Quests page-->
+    <servlet>
+        <servlet-name>Quests</servlet-name>
+        <jsp-file>/view/quests.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Quests</servlet-name>
+        <url-pattern>/quests</url-pattern>
+    </servlet-mapping>
+
+    <!--Reviews page-->
+    <servlet>
+        <servlet-name>Reviews</servlet-name>
+        <jsp-file>/view/reviews.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Reviews</servlet-name>
+        <url-pattern>/reviews</url-pattern>
+    </servlet-mapping>
+
+    <!--About page-->
+    <servlet>
+        <servlet-name>About</servlet-name>
+        <jsp-file>/view/about.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>About</servlet-name>
+        <url-pattern>/about</url-pattern>
+    </servlet-mapping>
+</web-app>
