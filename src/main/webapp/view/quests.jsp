@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ page isELIgnored="false" %>
 <html>
     <head>
         <meta charset="utf-8">
@@ -34,19 +36,21 @@
                         <img src="../static/images/quests/quest_one.jpg" alt="Quest Image 1">
                         <h3>Частина 1: Прокляття села</h3>
                         <p>У покинутому селі, оповитому тумані, жителі страждають від таємничого прокляття, яке породжує нещастя та страх.</p>
-                        <form action="/start-quest" method="post">
-                            <input type="hidden" name="questId" value="1">
-                            <button type="submit">Начать квест</button>
-                        </form>
+                        <c:url var="redirection" value="/quest">
+                            <c:param name="id" value="1"/>
+                            <c:param name="filePath" value="../resources/parts/part_one.json"/>
+                        </c:url>
+                        <a href="${redirection}" class="button-start">Розпочати</a>
                     </div>
                     <div class="quest-card">
                         <img src="../static/images/quests/quest_two.jpg" alt="Quest Image 2">
                         <h3>Частина 2: Омут на Кортелі</h3>
                         <p> Легенди розповідають про загублені душі, які шукають порятунку. Місцеві жителі чують шепіт води і бачать тіні.</p>
-                        <form action="/start-quest" method="post">
-                            <input type="hidden" name="questId" value="2"> <!-- ID квеста -->
-                            <button type="submit">Начать квест</button>
-                        </form>
+                        <c:url var="redirection" value="/quest">
+                            <c:param name="id" value="1"/>
+                            <c:param name="filePath" value="../resources/parts/part_one.json"/>
+                        </c:url>
+                        <a href="${redirection}" class="button-start">Розпочати</a>
                     </div>
                 </div>
             </div>
