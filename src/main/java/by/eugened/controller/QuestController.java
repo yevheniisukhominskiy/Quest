@@ -35,7 +35,7 @@ public class QuestController extends HttpServlet {
 
         req.setAttribute("quest", quest);
         req.setAttribute("question", question);
-        req.getRequestDispatcher("/view/quest.jsp").forward(req, resp);
+        req.getRequestDispatcher("/view/quest/quest.jsp").forward(req, resp);
     }
 
     @Override
@@ -55,9 +55,9 @@ public class QuestController extends HttpServlet {
         if (nextQuestionId != null) {
             question = findQuestionById(nextQuestionId);
             req.setAttribute("question", question);
-            req.getRequestDispatcher("/view/quest.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/quest/quest.jsp").forward(req, resp);
         } else {
-            req.getRequestDispatcher("/view/result.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/quest/result.jsp").forward(req, resp);
         }
 
     }

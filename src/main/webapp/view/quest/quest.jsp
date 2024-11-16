@@ -38,7 +38,7 @@
                 <div class="question">
                     <c:if test="${not empty question}">
                         <h2 class="label">${question.question}</h2>
-                        <form action="" method="post">
+                        <form action="/quest" method="post">
                             <input type="hidden" name="id" value="${question.id}">
                             <c:forEach var="option" items="${question.options}">
                                 <div class="answers">
