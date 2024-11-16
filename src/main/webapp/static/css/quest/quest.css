@@ -1,0 +1,46 @@
+body {
+    font-family: "Montserrat", serif;
+    font-size: 18px;
+    color: white;
+    background-color: rebeccapurple;
+}
+
+.part_label {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 80px;
+}
+
+.question {
+    padding-top: 30px;
+    width: 750px;
+    margin: 0 auto;
+
+}
+
+.label {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.answers {
+    margin-bottom: 7px;
+}
+
+.button {
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.button:hover {
+    background-color: orange;
+    color: white;
+    transition: 0.5s;
+}

@@ -1,0 +1,77 @@
+header {
+    height: 70px;
+    width: 100%;
+}
+
+.container {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo:hover {
+    color: orange;
+    transition: 0.5s;
+}
+
+.navbar {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar li a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover{
+    color: orange;
+    transition: 0.5s;
+}
+
+.navbar li a.active {
+    color: orange;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.authorization {
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.authorization a {
+    border: 1px white solid;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.authorization a:hover {
+    background-color: orange;
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: white;
+}
+
+
+
