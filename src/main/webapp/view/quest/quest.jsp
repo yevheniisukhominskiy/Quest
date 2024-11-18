@@ -14,7 +14,7 @@
         <header>
             <div class="container">
                 <div class="menu">
-                    <a href="#" class="logo">Quest</a>
+                    <a href="/home" class="logo">Quest</a>
 
                     <ul class="navbar">
                         <li><a href="/home" class="active">Home</a></li>

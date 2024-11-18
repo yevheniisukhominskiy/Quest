@@ -8,7 +8,7 @@
         <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
         <link href="../static/css/quests.css" rel="stylesheet">
         <link href="../static/css/general/header.css" rel="stylesheet">
-        <title>Home</title>
+        <title>Quests</title>
     <body>
         <header>
             <div class="container">
@@ -38,7 +38,7 @@
                         <p>У покинутому селі, оповитому тумані, жителі страждають від таємничого прокляття, яке породжує нещастя та страх.</p>
                         <c:url var="redirection" value="/quest">
                             <c:param name="id" value="1"/>
-                            <c:param name="filePath" value="../resources/parts/part_one.json"/>
+                            <c:param name="filePath" value="resources/parts/part_one.json"/>
                         </c:url>
                         <a href="${redirection}" class="button-start">Розпочати</a>
                     </div>
@@ -48,7 +48,7 @@
                         <p> Легенди розповідають про загублені душі, які шукають порятунку. Місцеві жителі чують шепіт води і бачать тіні.</p>
                         <c:url var="redirection" value="/quest">
                             <c:param name="id" value="1"/>
-                            <c:param name="filePath" value="../resources/parts/part_one.json"/>
+                            <c:param name="filePath" value="resources/parts/part_one.json"/>
                         </c:url>
                         <a href="${redirection}" class="button-start">Розпочати</a>
                     </div>
