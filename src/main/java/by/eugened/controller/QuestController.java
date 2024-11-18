@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -16,20 +17,25 @@ import java.util.List;
 
 @WebServlet("/quest")
 public class QuestController extends HttpServlet {
+    // TODO: Add session
     private Quest quest;
 
     @Override
-    public void init() throws ServletException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+
         try {
+            String filePath = req.getParameter("filePath");
             QuestLoader loader = new QuestLoader();
-            quest = loader.loadQuest("C:\\\\Users\\\\terst\\\\IdeaProjects\\\\Quest\\\\src\\\\main\\\\resources\\\\parts\\\\part_one.json");
+            quest = loader.loadQuest("C:/Users/Eugene/IdeaProjects/Quest/src/main/" + filePath);
+
+            if (session.getAttribute("startTime") == null) {
+                session.setAttribute("startTime", System.currentTimeMillis());
+            }
         } catch (IOException e) {
             throw new ServletException("Failed to load quest data", e);
         }
-    }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         Question question = findQuestionById(id);
 
@@ -54,9 +60,19 @@ public class QuestController extends HttpServlet {
         }
         if (nextQuestionId != null) {
             question = findQuestionById(nextQuestionId);
+            req.setAttribute("quest", quest);
             req.setAttribute("question", question);
             req.getRequestDispatcher("/view/quest/quest.jsp").forward(req, resp);
         } else {
+            HttpSession session = req.getSession();
+            Long startTime = (Long) session.getAttribute("startTime");
+
+            if (startTime != null) {
+                long elapsedTime = System.currentTimeMillis() - startTime;
+                long elapsedSeconds = elapsedTime / 1000;
+                req.setAttribute("elapsedTime", elapsedSeconds);
+                session.removeAttribute("startTime");
+            }
             req.getRequestDispatcher("/view/quest/result.jsp").forward(req, resp);
         }
 
