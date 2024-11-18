@@ -1,5 +1,5 @@
 header {
-    height: 70px;
+    height: 80px;
     width: 100%;
 }
 
@@ -42,12 +42,6 @@ header {
 .navbar li a:hover{
     color: orange;
     transition: 0.5s;
-}
-
-.navbar li a.active {
-    color: orange;
-    font-weight: 500;
-    transition: 0.3s;
 }
 
 .authorization {
