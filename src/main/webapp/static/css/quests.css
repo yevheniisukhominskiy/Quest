@@ -1,59 +1,91 @@
 body {
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 18px;
     color: white;
     background-color: rebeccapurple;
+    margin: 0;
+    padding: 0;
 }
 
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(90vh - 80px); /* Учитываем высоту header */
     text-align: center;
+    padding: 40px 20px;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    max-width: 400px;
-    width: 90%;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-h2.label {
-    font-size: 42px;
-    font-weight: bold;
+.title {
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ffdd57;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-p {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+.quest-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.quest-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quest-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.quest-image {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quest-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffdd57;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.quest-description {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .button {
     color: #ffdd57;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     border: 2px solid #ffdd57;
     border-radius: 25px;
-    padding: 12px 24px;
-    cursor: pointer;
+    padding: 10px 20px;
     text-decoration: none;
+    background: transparent;
     transition: all 0.3s ease;
-    background: none;
-    display: inline-block;
+    cursor: pointer;
 }
 
 .button:hover {
-    background-color: #ffd700;
-    color: black;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }

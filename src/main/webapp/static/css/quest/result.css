@@ -9,7 +9,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(90vh - 80px); /* Учитываем высоту header */
+    height: calc(90vh - 80px);
     text-align: center;
 }
 

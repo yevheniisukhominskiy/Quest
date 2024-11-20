@@ -44,12 +44,21 @@ header {
     transition: 0.5s;
 }
 
-.authorization {
-    width: 230px;
+.authorization.logged-in {
+    width: 190px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.authorization.logged-out {
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 .authorization a {
     border: 1px white solid;
     border-radius: 5px;

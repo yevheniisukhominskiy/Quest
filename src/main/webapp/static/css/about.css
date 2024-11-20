@@ -3,4 +3,38 @@ body {
     font-size: 18px;
     color: white;
     background-color: rebeccapurple;
+    margin: 0;
+    padding: 0;
+}
+
+.about-section {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 15px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
 }

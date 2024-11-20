@@ -1,6 +1,88 @@
 body {
     font-family: "Montserrat", serif;
     font-size: 18px;
-    color: white;
+    color: #f2f2f2;
     background-color: rebeccapurple;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.reviews-section {
+    text-align: center;
+    padding: 40px 0;
+    color: #e0e0e0;
+}
+
+.reviews-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.reviews-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #d1d1d1;
+    margin: 10px 0;
+}
+
+/* Review Cards */
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.1);
+    width: 25%;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-title {
+    color: #f2f2f2;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.review-text {
+    font-size: 10px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        width: 100%;
+    }
 }
