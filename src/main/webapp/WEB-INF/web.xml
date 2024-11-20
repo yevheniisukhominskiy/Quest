@@ -13,16 +13,6 @@
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
 
-    <!--Quests page-->
-    <servlet>
-        <servlet-name>Quests</servlet-name>
-        <jsp-file>/view/quests.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Quests</servlet-name>
-        <url-pattern>/quests</url-pattern>
-    </servlet-mapping>
-
     <!--Reviews page-->
     <servlet>
         <servlet-name>Reviews</servlet-name>
