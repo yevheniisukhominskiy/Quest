@@ -17,7 +17,6 @@ import java.util.List;
 
 @WebServlet("/quest")
 public class QuestController extends HttpServlet {
-    // TODO: Add session
     private Quest quest;
 
     @Override
@@ -27,7 +26,7 @@ public class QuestController extends HttpServlet {
         try {
             String filePath = req.getParameter("filePath");
             QuestLoader loader = new QuestLoader();
-            quest = loader.loadQuest("C:/Users/Eugene/IdeaProjects/Quest/src/main/" + filePath);
+            quest = loader.loadQuest("C:/Users/yevhe/IdeaProjects/Quest/src/main/" + filePath);
 
             if (session.getAttribute("startTime") == null) {
                 session.setAttribute("startTime", System.currentTimeMillis());
