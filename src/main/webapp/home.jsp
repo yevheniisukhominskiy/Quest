@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ page isELIgnored="false" %>
+
 <html lang="ua">
     <head>
         <meta charset="utf-8">
@@ -21,10 +24,27 @@
                         <li><a href="/about">About</a></li>
                     </ul>
 
-                    <div class="authorization">
-                        <a href="#">Sign In</a>
-                        <a href="#">Registration</a>
+                    <div class="authorization
+                        <c:choose>
+                            <c:when test="${not empty sessionScope.username}">
+                                logged-in
+                            </c:when>
+                            <c:otherwise>
+                                logged-out
+                            </c:otherwise>
+                        </c:choose>">
+                        <c:choose>
+                            <c:when test="${not empty sessionScope.username}">
+                                <span><i class="ri-user-line"></i>${sessionScope.username}</span>
+                                <a href="/logout">Log Out</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="/login">Sign In</a>
+                                <a href="/register">Registration</a>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
+                </div>
                 </div>
             </div>
         </header>

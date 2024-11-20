@@ -22,35 +22,75 @@
                         <li><a href="/about">About</a></li>
                     </ul>
 
-                    <div class="authorization">
-                        <a href="#">Sign In</a>
-                        <a href="#">Registration</a>
+                    <div class="authorization
+                        <c:choose>
+                            <c:when test="${not empty sessionScope.username}">
+                                logged-in
+                            </c:when>
+                            <c:otherwise>
+                                logged-out
+                            </c:otherwise>
+                        </c:choose>">
+                        <c:choose>
+                            <c:when test="${not empty sessionScope.username}">
+                                <span><i class="ri-user-line"></i>${sessionScope.username}</span>
+                                <a href="/logout">Log Out</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="/login">Sign In</a>
+                                <a href="/register">Registration</a>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </div>
             </div>
         </header>
         <section>
             <div class="container">
+                <h1 class="title">Quests</h1>
                 <div class="quest-container">
                     <div class="quest-card">
-                        <img src="../static/images/quests/quest_one.jpg" alt="Quest Image 1">
-                        <h3>Частина 1: Прокляття села</h3>
-                        <p>У покинутому селі, оповитому тумані, жителі страждають від таємничого прокляття, яке породжує нещастя та страх.</p>
+                        <img src="../static/images/quests/village.jpg" alt="Quest Image 1" class="quest-image">
+                        <h3 class="quest-title">Частина 1: Прокляття села</h3>
+                        <p class="quest-description">У покинутому селі, оповитому тумані, жителі страждають від таємничого прокляття, яке породжує нещастя та страх.</p>
                         <c:url var="redirection" value="/quest">
                             <c:param name="id" value="1"/>
                             <c:param name="filePath" value="resources/parts/part_one.json"/>
                         </c:url>
-                        <a href="${redirection}" class="button-start">Розпочати</a>
+                        <a href="${redirection}" class="button button-start">Розпочати</a>
                     </div>
+
                     <div class="quest-card">
-                        <img src="../static/images/quests/quest_two.jpg" alt="Quest Image 2">
-                        <h3>Частина 2: Омут на Кортелі</h3>
-                        <p> Легенди розповідають про загублені душі, які шукають порятунку. Місцеві жителі чують шепіт води і бачать тіні.</p>
+                        <img src="../static/images/quests/swamp.jpg" alt="Quest Image 2" class="quest-image">
+                        <h3 class="quest-title">Частина 2: Омут на Кортелі</h3>
+                        <p class="quest-description">Легенди розповідають про загублені душі, які шукають порятунку. Місцеві жителі чують шепіт води і бачать тіні.</p>
                         <c:url var="redirection" value="/quest">
-                            <c:param name="id" value="1"/>
-                            <c:param name="filePath" value="resources/parts/part_one.json"/>
+                            <c:param name="id" value="2"/>
+                            <c:param name="filePath" value="resources/parts/part_two.json"/>
                         </c:url>
-                        <a href="${redirection}" class="button-start">Розпочати</a>
+                        <a href="${redirection}" class="button button-start">Розпочати</a>
+                    </div>
+
+                    <div class="quest-card">
+                        <img src="../static/images/quests/monastery.jpg" alt="Quest Image 3" class="quest-image">
+                        <h3 class="quest-title">Частина 3: Загадка гірського монастиря</h3>
+                        <p class="quest-description">Старий монастир Ломія зберігає багато секретів і таємниць, прихованих в глибинах гір. Чи зможеш ти розкрити їх?</p>
+                        <c:url var="redirection" value="/quest">
+                            <c:param name="id" value="3"/>
+                            <c:param name="filePath" value="resources/parts/part_three.json"/>
+                        </c:url>
+                        <a href="${redirection}" class="button button-start">Розпочати</a>
+                    </div>
+
+                    <div class="quest-card">
+                        <img src="../static/images/quests/laboratory.jpg" alt="Quest Image 4" class="quest-image">
+                        <h3 class="quest-title">Частина 4: Забута лабораторія</h3>
+                        <p class="quest-description">У серці міста лежить занедбана лабораторія, де проводилися таємничі експерименти. Розкрий їхню правду.</p>
+                        <c:url var="redirection" value="/quest">
+                            <c:param name="id" value="4"/>
+                            <c:param name="filePath" value="resources/parts/part_four.json"/>
+                        </c:url>
+                        <a href="${redirection}" class="button button-start">Розпочати</a>
                     </div>
                 </div>
             </div>
